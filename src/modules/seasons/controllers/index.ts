@@ -1,1 +1,1 @@
-export const SeasonControllers = {};
+export const SeasonController = {};
