@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Season {
+  id                    String   @id @default(uuid())
+  year                  String   @unique
+  drivers_champion      String
+  constructors_champion String
+  teams                 Team[]
+  drivers               Driver[]
+  cars                  Car[]
+
+  @@map("seasons")
+}
+
+model Team {
+  id                 String   @id @default(uuid())
+  constructor_titles Int?
+  drivers_titles     Int?
+  drivers            Driver[]
+  Season             Season?  @relation(fields: [seasonYear], references: [year])
+  seasonYear         String?
+
+  @@map("teams")
+}
+
+model Driver {
+  id                 String   @id @default(uuid())
+  name               String   @unique
+  nationality        String?
+  birthday           String?
+  age                Int?
+  world_titles       Int?
+  wins               Int?
+  podiums            Int?
+  dnfs               Int?
+  is_competing_in_f1 Boolean?
+  is_alive           Boolean?
+  photo              String?
+  Season             Season?  @relation(fields: [seasonYear], references: [year])
+  seasonYear         String?
+  Team               Team?    @relation(fields: [teamId], references: [id])
+  teamId             String?
+  Car                Car?     @relation(fields: [carId], references: [id])
+  carId              String?
+
+  @@map("drivers")
+}
+
+model Car {
+  id         String   @id @default(uuid())
+  team       String
+  name       String   @unique
+  photo      String?
+  wins       Int?
+  podiums    Int?
+  dnfs       Int?
+  drivers    Driver[]
+  Season     Season?  @relation(fields: [seasonYear], references: [year])
+  seasonYear String?
+
+  @@map("cars")
+}
