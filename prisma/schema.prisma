@@ -14,7 +14,8 @@ model Season {
   id                    String   @id @default(uuid())
   year                  String   @unique
   drivers_champion      String
-  constructors_champion String
+  constructors_champion String?
+  races                 Race[]
   teams                 Team[]
   drivers               Driver[]
   cars                  Car[]
@@ -27,6 +28,7 @@ model Team {
   constructor_titles Int?
   drivers_titles     Int?
   drivers            Driver[]
+  cars               Car[]
   Season             Season?  @relation(fields: [seasonYear], references: [year])
   seasonYear         String?
 
@@ -67,6 +69,20 @@ model Car {
   drivers    Driver[]
   Season     Season?  @relation(fields: [seasonYear], references: [year])
   seasonYear String?
+  Team       Team?    @relation(fields: [teamId], references: [id])
+  teamId     String?
 
   @@map("cars")
+}
+
+model Race {
+  id       String   @id @default(uuid())
+  name     String
+  datetime DateTime
+  winner   String?
+  circuit  String
+  Season   Season?  @relation(fields: [seasonId], references: [id])
+  seasonId String?
+
+  @@map("races")
 }

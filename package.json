@@ -7,7 +7,7 @@
     "node": "18"
   },
   "scripts": {
-    "dev": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts",
     "build": "tsup src",
     "start": "node dist/app.js"
   },
