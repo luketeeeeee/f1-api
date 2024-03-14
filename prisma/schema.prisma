@@ -76,13 +76,13 @@ model Car {
 }
 
 model Race {
-  id       String   @id @default(uuid())
-  name     String
-  datetime DateTime
-  winner   String?
-  circuit  String
-  Season   Season?  @relation(fields: [seasonId], references: [id])
-  seasonId String?
+  id         String   @id @default(uuid())
+  name       String
+  datetime   DateTime
+  winner     String?
+  circuit    String
+  Season     Season?  @relation(fields: [seasonYear], references: [year])
+  seasonYear String?
 
   @@map("races")
 }
