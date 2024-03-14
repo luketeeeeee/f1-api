@@ -1,9 +1,23 @@
 import { Request, Response } from 'express';
-import { createSeason } from '../services';
+import { createSeason, findSeasonByYear } from '../services';
 
 export const create = async (req: Request, res: Response) => {
   try {
     const { year, drivers_champion, constructors_champion } = req.body;
+
+    if (year > 2024 || year < 1950) {
+      return res.status(422).json({
+        message: "year can't be ",
+      });
+    }
+
+    const existingSeason = await findSeasonByYear(year);
+
+    if (existingSeason) {
+      return res.status(409).json({
+        message: `season ${year} already exists`,
+      });
+    }
 
     const newSeason = await createSeason({
       year,

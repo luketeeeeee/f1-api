@@ -3,7 +3,7 @@ import { findAllSeasons } from '../services';
 
 export const findAll = async (req: Request, res: Response) => {
   try {
-    const allSeasons = findAllSeasons();
+    const allSeasons = await findAllSeasons();
 
     return res.status(200).json({
       message: 'all seasons finded',
