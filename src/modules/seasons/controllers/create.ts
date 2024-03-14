@@ -5,9 +5,11 @@ export const create = async (req: Request, res: Response) => {
   try {
     const { year, drivers_champion, constructors_champion } = req.body;
 
-    if (year > 2024 || year < 1950) {
+    const currentYear = new Date().getFullYear();
+
+    if (year > currentYear || year < 1950) {
       return res.status(422).json({
-        message: "year can't be ",
+        message: "year can't be less than 1950 or greater than 2024",
       });
     }
 
