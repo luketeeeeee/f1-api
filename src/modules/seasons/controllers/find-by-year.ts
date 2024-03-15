@@ -17,7 +17,7 @@ export const findByYear = async (req: Request, res: Response) => {
     const seasonRaces = await findRacesByYear(param_year);
 
     return res.status(200).json({
-      data: { season, seasonRaces },
+      data: { season, races: seasonRaces },
       message: `${param_year} season finded`,
     });
   } catch (error) {
