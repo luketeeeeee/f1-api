@@ -1,7 +1,15 @@
-🔴 high priority tasks:
-  ☐ races module - update controller @started(24-03-15 16:39)
-  ☐ races module - find by year
+🔴 critical tasks (bugs):
 
-🟠 medium priority tasks:
+🟠 medium priority tasks (new features):
+  ✔ @high races module - update controller @started(24-03-15 16:39) @done(24-03-15 16:58) @lasted(19m38s)
+  ☐ @high races module - find by year controller
+  ☐ @high drivers module - routes
+  ☐ @high drivers module - find all service
+  ☐ @high drivers module - find by id service
+  ☐ @high drivers module - create service
+  ☐ @high drivers module - update service
+  ☐ @high drivers module - 
 
-🟡 low priority tasks:
+🟡 low priority tasks (future plans):
+  ☐ @low add "all_time_drivers" field to team model
+  ☐ @low change "drivers" field to "current_drivers" field on team model

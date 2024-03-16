@@ -14,17 +14,23 @@ export const updateSeason = (
       where: { year },
       data: { races: { connect: { id: raceId } } },
     });
-  } else if (teamId) {
+  }
+
+  if (teamId) {
     return prisma.season.update({
       where: { year },
       data: { teams: { connect: { id: teamId } } },
     });
-  } else if (driverId) {
+  }
+
+  if (driverId) {
     return prisma.season.update({
       where: { year },
       data: { drivers: { connect: { id: driverId } } },
     });
-  } else if (carId) {
+  }
+
+  if (carId) {
     return prisma.season.update({
       where: { year },
       data: { cars: { connect: { id: carId } } },
