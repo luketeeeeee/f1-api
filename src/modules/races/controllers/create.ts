@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { createRace } from '../services';
 import { updateSeason } from '../../seasons/services';
+import { relatedObjects } from '../../types';
 
 export const create = async (req: Request, res: Response) => {
   try {

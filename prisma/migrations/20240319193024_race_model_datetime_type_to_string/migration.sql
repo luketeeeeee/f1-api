@@ -1,0 +1,7 @@
+-- AlterTable
+ALTER TABLE "races" ALTER COLUMN "fp1_datetime" SET DATA TYPE TEXT,
+ALTER COLUMN "fp2_datetime" SET DATA TYPE TEXT,
+ALTER COLUMN "fp3_datetime" SET DATA TYPE TEXT,
+ALTER COLUMN "quali_datetime" SET DATA TYPE TEXT,
+ALTER COLUMN "race_datetime" SET DATA TYPE TEXT,
+ALTER COLUMN "sprint_datetime" SET DATA TYPE TEXT;
