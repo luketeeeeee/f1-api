@@ -4,36 +4,34 @@ import prisma from '../../prisma';
 export const updateSeason = (
   year: string,
   season: Prisma.SeasonUpdateInput,
-  raceId?: string,
-  teamId?: string,
-  driverId?: string,
-  carId?: string
+  newRelatedObjectType?: string,
+  relatedObjectId?: string
 ) => {
-  if (raceId) {
+  if (newRelatedObjectType === 'race') {
     return prisma.season.update({
       where: { year },
-      data: { races: { connect: { id: raceId } } },
+      data: { races: { connect: { id: relatedObjectId } } },
     });
   }
 
-  if (teamId) {
+  if (newRelatedObjectType === 'team') {
     return prisma.season.update({
       where: { year },
-      data: { teams: { connect: { id: teamId } } },
+      data: { teams: { connect: { id: relatedObjectId } } },
     });
   }
 
-  if (driverId) {
+  if (newRelatedObjectType === 'driver') {
     return prisma.season.update({
       where: { year },
-      data: { drivers: { connect: { id: driverId } } },
+      data: { drivers: { connect: { id: relatedObjectId } } },
     });
   }
 
-  if (carId) {
+  if (newRelatedObjectType === 'car') {
     return prisma.season.update({
       where: { year },
-      data: { cars: { connect: { id: carId } } },
+      data: { cars: { connect: { id: relatedObjectId } } },
     });
   }
 

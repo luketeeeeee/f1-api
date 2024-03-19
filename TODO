@@ -8,7 +8,7 @@
   ☐ @high drivers module - find by id service
   ☐ @high drivers module - create service
   ☐ @high drivers module - update service
-  ☐ @high drivers module - 
+  ☐ @high drivers module - delete service
 
 🟡 low priority tasks (future plans):
   ☐ @low add "all_time_drivers" field to team model

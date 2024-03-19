@@ -8,7 +8,7 @@ export const create = async (req: Request, res: Response) => {
 
     const newRace = await createRace({ name, race_datetime, circuit, ...body });
 
-    await updateSeason(seasonYear, {}, newRace.id);
+    await updateSeason(seasonYear, {}, relatedObjects.race, newRace.id);
 
     return res.status(200).json({
       message: 'race created successfully',
