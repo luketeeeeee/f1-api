@@ -1,0 +1,20 @@
+🔴 critical tasks (bugs):
+
+🟠 high priority tasks (new features):
+  ☐ @high drivers module - routes
+  ☐ @high drivers module - find all service
+  ☐ @high drivers module - find by id service
+  ☐ @high drivers module - create service
+  ☐ @high drivers module - update service
+  ☐ @high drivers module - delete service
+  ☐ @high races module - find race by date service
+  ☐ @high races module - find race by date controller
+
+🟡 low priority tasks (future plans):
+  ☐ @low add "all_time_drivers" field to team model
+  ☐ @low change "drivers" field to "current_drivers" field on team model
+
+Archive:
+  ✔ @critical race model - change datetimes data type to string @done(24-03-19 16:32)
+  ✔ @high races module - update controller @done(24-03-15 16:58)
+  ✘ @high races module - find by year controller @cancelled(24-03-19 16:37)

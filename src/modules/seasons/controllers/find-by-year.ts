@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { findSeasonByYear } from '../services';
+import { findRacesByYear } from '../../races/services/find-races-by-year';
 
 export const findByYear = async (req: Request, res: Response) => {
   try {
@@ -13,8 +14,10 @@ export const findByYear = async (req: Request, res: Response) => {
       });
     }
 
+    const seasonRaces = await findRacesByYear(param_year);
+
     return res.status(200).json({
-      data: season,
+      data: { season, races: seasonRaces },
       message: `${param_year} season finded`,
     });
   } catch (error) {
