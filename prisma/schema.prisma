@@ -87,6 +87,7 @@ model Race {
   fp1_datetime          String?
   winner                String?
   circuit               String
+  race_number           Int
   Season                Season? @relation(fields: [seasonYear], references: [year])
   seasonYear            String?
 
