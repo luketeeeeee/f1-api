@@ -1,7 +1,7 @@
 🔴 critical tasks (bugs):
 
 🟠 high priority tasks (new features):
-  ☐ @high races model - add a field to order the races on cronological order
+  ✔ @high races model - add a field to order the races on cronological order @done(24-03-20 01:11)
   ☐ @high races module - find race by id controller
   ☐ @high races module - find race by date service
   ☐ @high races module - find race by date controller
