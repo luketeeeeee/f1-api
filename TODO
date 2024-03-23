@@ -1,10 +1,11 @@
 🔴 critical tasks (bugs):
 
 🟠 high priority tasks (new features):
+  ☐ @high seasons module - create many controller
   ✔ @high races model - add a field to order the races on cronological order @done(24-03-20 01:11)
   ✔ @high races module - find race by id controller @done(24-03-21 21:01)
-  ☐ @high races module - find race by date service
-  ☐ @high races module - find race by date controller
+  ☐ @high races module - find by date service
+  ☐ @high races module - find by date controller
   ☐ @high drivers module - routes
   ☐ @high drivers module - find all service
   ☐ @high drivers module - find by id service
