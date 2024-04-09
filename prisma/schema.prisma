@@ -38,15 +38,15 @@ model Team {
 model Driver {
   id                 String   @id @default(uuid())
   name               String   @unique
-  nationality        String?
+  nationality        String
   birthday           String?
   age                Int?
   world_titles       Int?
   wins               Int?
   podiums            Int?
   dnfs               Int?
-  is_competing_in_f1 Boolean?
-  is_alive           Boolean?
+  is_competing_in_f1 Boolean
+  is_alive           Boolean
   photo              String?
   competed_seasons   String[]
   Season             Season?  @relation(fields: [seasonYear], references: [year])

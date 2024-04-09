@@ -1,9 +1,6 @@
 🔴 critical tasks (bugs):
 
 🟠 high priority tasks (new features):
-  ☐ @high seasons module - create many controller
-  ✔ @high races model - add a field to order the races on cronological order @done(24-03-20 01:11)
-  ✔ @high races module - find race by id controller @done(24-03-21 21:01)
   ☐ @high races module - find by date service
   ☐ @high races module - find by date controller
   ☐ @high drivers module - routes
@@ -22,6 +19,9 @@
   ☐ @low create circuit model
 
 Archive:
+  ✔ @high seasons module - create many controller @done(24-03-23 12:49)
   ✔ @critical race model - change datetimes data type to string @done(24-03-19 16:32)
   ✔ @high races module - update controller @done(24-03-15 16:58)
+  ✔ @high races model - add a field to order the races on cronological order @done(24-03-20 01:11)
+  ✔ @high races module - find race by id controller @done(24-03-21 21:01)
   ✘ @high races module - find by year controller @cancelled(24-03-19 16:37)
