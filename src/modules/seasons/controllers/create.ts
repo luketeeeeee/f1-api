@@ -8,7 +8,7 @@ export const create = async (req: Request, res: Response) => {
 
     if (!isSeasonYearValid(year)) {
       return res.status(422).json({
-        message: "year can't be less than 1950 or greater than the current year",
+        message: "year can't be minor than 1950 or greater than the current year",
       });
     }
 

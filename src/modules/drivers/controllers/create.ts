@@ -17,13 +17,23 @@ export const create = async (req: Request, res: Response) => {
       ...body,
     });
 
-    competed_seasons.length > 0
-      ? competed_seasons.forEach(async (season) => {
-          if (isSeasonYearValid(season)) {
-            await updateSeason(season, {}, relatedObjects.driver, newDriver.id);
-          }
-        })
-      : console.log('just for the commit');
+    if (competed_seasons.length > 0) {
+      competed_seasons.forEach(async (season) => {
+        if (!isSeasonYearValid(season)) {
+          return res.status(422).json({
+            message:
+              "competed seasons can't be minor than 1950 ou greater than the current year",
+          });
+        }
+
+        await updateSeason(season, {}, relatedObjects.driver, newDriver.id);
+      });
+
+      return res.status(200).json({
+        message: 'driver create successfully',
+        data: newDriver,
+      });
+    }
 
     return res.status(200).json({
       message: 'driver created successfully',
