@@ -1,15 +1,14 @@
 import { Request, Response } from 'express';
 import { createSeason, findSeasonByYear } from '../services';
+import { isSeasonYearValid } from '../../../utils/isSeasonYearValid';
 
 export const create = async (req: Request, res: Response) => {
   try {
     const { year, drivers_champion, constructors_champion } = req.body;
 
-    const currentYear = new Date().getFullYear();
-
-    if (year > currentYear || year < 1950) {
+    if (!isSeasonYearValid(year)) {
       return res.status(422).json({
-        message: "year can't be less than 1950 or greater than 2024",
+        message: "year can't be minor than 1950 or greater than the current year",
       });
     }
 
