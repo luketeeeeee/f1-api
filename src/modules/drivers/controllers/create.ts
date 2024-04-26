@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { createDriver } from '../services/create-driver';
+import { createDriver } from '../services';
 import { updateSeason } from '../../seasons/services';
 import { relatedObjects } from '../../types';
 import { isSeasonYearValid } from '../../../utils/isSeasonYearValid';
@@ -21,8 +21,7 @@ export const create = async (req: Request, res: Response) => {
       competed_seasons.forEach(async (season) => {
         if (!isSeasonYearValid(season)) {
           return res.status(422).json({
-            message:
-              "competed seasons can't be minor than 1950 ou greater than the current year",
+            message: `the ${season} season has not yet been created in the database or is not between 1950 and the current year`,
           });
         }
 
@@ -39,5 +38,10 @@ export const create = async (req: Request, res: Response) => {
       message: 'driver created successfully',
       data: newDriver,
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      message: 'internal server error',
+    });
+  }
 };

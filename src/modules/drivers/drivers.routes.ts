@@ -3,7 +3,7 @@ import { DriverController } from './controllers';
 
 const router = express.Router();
 
-// router.route('/').get(DriverController.findAll);
+router.route('/').get(DriverController.findAll);
 // router.route('/:id').get(DriverController.findById);
 // router.route('/').post(DriverController.create);
 // router.route('/many').post(DriverController.createMany);

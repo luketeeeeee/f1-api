@@ -4,6 +4,7 @@ import log from './utils/logger';
 
 import { seasonRoutes } from './modules/seasons';
 import { raceRoutes } from './modules/races';
+import { driverRoutes } from './modules/drivers';
 
 const port = 8080;
 const url = `http://localhost:${port}`;
@@ -15,6 +16,7 @@ app.use(express.json({ limit: '10mb' }));
 
 app.use('/seasons', seasonRoutes);
 app.use('/races', raceRoutes);
+app.use('/drivers', driverRoutes);
 
 app.listen(port, () => {
   log.info(`servidor iniciado em ${url}`);
