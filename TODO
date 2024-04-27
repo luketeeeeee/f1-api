@@ -1,13 +1,12 @@
 🔴 critical tasks (bugs):
 
 🟠 high priority tasks (new features):
-  ✔ @high drivers module - find all service @done(24-04-26 00:09)
-  ✔ @high drivers module - find all controller @done(24-04-26 00:09)
+  ☐ @high drivers module - delete service
+  ☐ @high drivers module - delete controller
   ☐ @high drivers module - create service
   ☐ @high drivers module - routes
   ☐ @high drivers module - find by id service
   ☐ @high drivers module - update service
-  ☐ @high drivers module - delete service
   ☐ @high drivers module - create controller
   ☐ @high races module - find by date service
   ☐ @high races module - find by date controller
@@ -19,8 +18,11 @@
   ☐ @low races modules - find all races controller (returning how many races have occured)
   ☐ @low races model - add a field for cancelled (boolean)
   ☐ @low create circuit model
+  ☐ @low implement SOLID
 
 Archive:
+  ✔ @high drivers module - find all service @done(24-04-26 00:09)
+  ✔ @high drivers module - find all controller @done(24-04-26 00:09)
   ✔ @high seasons module - create many controller @done(24-03-23 12:49)
   ✔ @critical race model - change datetimes data type to string @done(24-03-19 16:32)
   ✔ @high races module - update controller @done(24-03-15 16:58)
