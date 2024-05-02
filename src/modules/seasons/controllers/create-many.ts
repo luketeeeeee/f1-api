@@ -6,7 +6,6 @@ export const createMany = async (req: Request, res: Response) => {
 
   try {
     const newSeasons = await createManySeasons(seasons);
-
     return res.status(200).json({
       message: 'seasons successfully created',
       data: newSeasons,
