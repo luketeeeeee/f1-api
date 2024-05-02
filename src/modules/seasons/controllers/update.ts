@@ -2,10 +2,10 @@ import { Request, Response } from 'express';
 import { findSeasonByYear, updateSeason } from '../services';
 
 export const update = async (req: Request, res: Response) => {
-  try {
-    const { param_year } = req.params;
-    const { year, drivers_champion, constructors_champion } = req.body;
+  const { param_year } = req.params;
+  const { year, drivers_champion, constructors_champion } = req.body;
 
+  try {
     const existingSeason = await findSeasonByYear(param_year);
 
     if (!existingSeason) {

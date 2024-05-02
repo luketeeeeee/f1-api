@@ -4,9 +4,9 @@ import { updateSeason } from '../../seasons/services';
 import { relatedObjects } from '../../types';
 
 export const create = async (req: Request, res: Response) => {
-  try {
-    const { seasonYear, name, race_datetime, circuit, ...body } = req.body;
+  const { seasonYear, name, race_datetime, circuit, ...body } = req.body;
 
+  try {
     const newRace = await createRace({ name, race_datetime, circuit, ...body });
 
     await updateSeason(seasonYear, {}, relatedObjects.race, newRace.id);

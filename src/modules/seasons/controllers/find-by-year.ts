@@ -4,9 +4,9 @@ import { findRacesByYear } from '../../races/services';
 import { findDriversByYear } from '../../drivers/services';
 
 export const findByYear = async (req: Request, res: Response) => {
-  try {
-    const { param_year } = req.params;
+  const { param_year } = req.params;
 
+  try {
     const season = await findSeasonByYear(param_year);
 
     if (!season) {

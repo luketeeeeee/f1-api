@@ -2,9 +2,9 @@ import { Request, Response } from 'express';
 import { deleteSeason, findSeasonByYear } from '../services';
 
 export const remove = async (req: Request, res: Response) => {
-  try {
-    const { param_year } = req.params;
+  const { param_year } = req.params;
 
+  try {
     const seasonToDelete = findSeasonByYear(param_year);
 
     if (!seasonToDelete) {

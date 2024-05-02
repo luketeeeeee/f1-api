@@ -3,9 +3,9 @@ import { createSeason, findSeasonByYear } from '../services';
 import { isSeasonYearValid } from '../../../utils/isSeasonYearValid';
 
 export const create = async (req: Request, res: Response) => {
-  try {
-    const { year, drivers_champion, constructors_champion } = req.body;
+  const { year, drivers_champion, constructors_champion } = req.body;
 
+  try {
     if (!isSeasonYearValid(year)) {
       return res.status(422).json({
         message: "year can't be minor than 1950 or greater than the current year",

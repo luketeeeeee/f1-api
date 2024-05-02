@@ -2,9 +2,9 @@ import { Request, Response } from 'express';
 import { createManySeasons } from '../services';
 
 export const createMany = async (req: Request, res: Response) => {
-  try {
-    const seasons = req.body;
+  const seasons = req.body;
 
+  try {
     const newSeasons = await createManySeasons(seasons);
 
     return res.status(200).json({

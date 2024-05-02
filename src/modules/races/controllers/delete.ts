@@ -2,9 +2,9 @@ import { Request, Response } from 'express';
 import { deleteRace, findRaceById } from '../services';
 
 export const remove = async (req: Request, res: Response) => {
-  try {
-    const { id } = req.params;
+  const { id } = req.params;
 
+  try {
     const raceToDelete = await findRaceById(id);
 
     if (!raceToDelete) {

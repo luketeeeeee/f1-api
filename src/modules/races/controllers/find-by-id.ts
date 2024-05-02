@@ -2,9 +2,9 @@ import { Request, Response } from 'express';
 import { findRaceById } from '../services';
 
 export const findById = async (req: Request, res: Response) => {
-  try {
-    const { id } = req.params;
+  const { id } = req.params;
 
+  try {
     const race = await findRaceById(id);
 
     if (!race) {

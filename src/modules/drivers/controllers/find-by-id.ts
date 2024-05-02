@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
-import { deleteDriver, findDriverById } from '../services';
+import { findDriverById } from '../services';
 
-export const remove = async (req: Request, res: Response) => {
+export const findById = (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {
-    const existingDriver = await findDriverById(id);
+    const existingDriver = findDriverById(id);
 
     if (!existingDriver) {
       return res.status(404).json({
@@ -13,10 +13,9 @@ export const remove = async (req: Request, res: Response) => {
       });
     }
 
-    await deleteDriver(id);
-
     return res.status(200).json({
-      message: `successfully deleted driver with id: ${id}`,
+      data: existingDriver,
+      message: 'driver founded',
     });
   } catch (error) {
     return res.status(500).json({

@@ -1,9 +1,11 @@
 import { create } from './create';
 import { findAll } from './find-all';
+import { findById } from './find-by-id';
 import { remove } from './delete';
 
 export const DriverController = {
-  findAll,
   create,
+  findAll,
+  findById,
   remove,
 };

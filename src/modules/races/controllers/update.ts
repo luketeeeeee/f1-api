@@ -2,20 +2,20 @@ import { Request, Response } from 'express';
 import { findRaceById, updateRace } from '../services';
 
 export const update = async (req: Request, res: Response) => {
-  try {
-    const { id } = req.params;
-    const {
-      name,
-      race_datetime,
-      quali_datetime,
-      sprint_datetime,
-      fp3_datetime,
-      fp2_datetime,
-      fp1_datetime,
-      winner,
-      circuit,
-    } = req.body;
+  const { id } = req.params;
+  const {
+    name,
+    race_datetime,
+    quali_datetime,
+    sprint_datetime,
+    fp3_datetime,
+    fp2_datetime,
+    fp1_datetime,
+    winner,
+    circuit,
+  } = req.body;
 
+  try {
     const existingRace = await findRaceById(id);
 
     if (!existingRace) {
