@@ -1,15 +1,13 @@
 import { Request, Response } from 'express';
-import { findAllSeasons } from '../services';
+import { findAllDrivers } from '../services';
 
 export const findAll = async (req: Request, res: Response) => {
   try {
-    const allSeasons = await findAllSeasons();
+    const allDrivers = await findAllDrivers();
 
     return res.status(200).json({
-      message: 'all seasons finded',
-      data: allSeasons.sort((season1, season2) => {
-        return Number(season1.year) - Number(season2.year);
-      }),
+      message: 'all drivers finded',
+      data: allDrivers,
     });
   } catch (error) {
     return res.status(500).json({

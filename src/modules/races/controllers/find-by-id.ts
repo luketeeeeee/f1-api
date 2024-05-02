@@ -1,25 +1,23 @@
 import { Request, Response } from 'express';
-import { deleteRace, findRaceById } from '../services';
+import { findRaceById } from '../services';
 
-export const remove = async (req: Request, res: Response) => {
+export const findById = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {
-    const raceToDelete = await findRaceById(id);
+    const race = await findRaceById(id);
 
-    if (!raceToDelete) {
+    if (!race) {
       return res.status(404).json({
         message: 'race not found',
       });
     }
 
-    await deleteRace(id);
-
     return res.status(200).json({
-      message: 'successfully deleted race',
+      data: race,
+      message: 'successfully found race',
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
       message: 'internal server error',
     });

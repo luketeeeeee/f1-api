@@ -38,16 +38,17 @@ model Team {
 model Driver {
   id                 String   @id @default(uuid())
   name               String   @unique
-  nationality        String?
+  nationality        String
   birthday           String?
   age                Int?
   world_titles       Int?
   wins               Int?
   podiums            Int?
   dnfs               Int?
-  is_competing_in_f1 Boolean?
-  is_alive           Boolean?
+  is_competing_in_f1 Boolean
+  is_alive           Boolean
   photo              String?
+  competed_seasons   String[]
   Season             Season?  @relation(fields: [seasonYear], references: [year])
   seasonYear         String?
   Team               Team?    @relation(fields: [teamId], references: [id])
@@ -86,9 +87,13 @@ model Race {
   sprint_quali_datetime String?
   fp1_datetime          String?
   winner                String?
+  // fastest_lap  String?
   circuit               String
+  race_number           Int
   Season                Season? @relation(fields: [seasonYear], references: [year])
   seasonYear            String?
 
   @@map("races")
 }
+
+// model Circuit {}

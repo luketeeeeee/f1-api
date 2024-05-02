@@ -1,20 +1,32 @@
 🔴 critical tasks (bugs):
 
 🟠 high priority tasks (new features):
-  ☐ @high drivers module - routes
-  ☐ @high drivers module - find all service
-  ☐ @high drivers module - find by id service
-  ☐ @high drivers module - create service
+  ☐ @high drivers module - create many controller
+  ☐ @high drivers module - create many service
   ☐ @high drivers module - update service
-  ☐ @high drivers module - delete service
-  ☐ @high races module - find race by date service
-  ☐ @high races module - find race by date controller
+  ☐ @high drivers module - routes
+  ☐ @high races module - find by date service
+  ☐ @high races module - find by date controller
 
 🟡 low priority tasks (future plans):
   ☐ @low add "all_time_drivers" field to team model
   ☐ @low change "drivers" field to "current_drivers" field on team model
+  ☐ @low races modules - find all races services
+  ☐ @low races modules - find all races controller (returning how many races have occured)
+  ☐ @low races model - add a field for cancelled (boolean)
+  ☐ @low create circuit model
+  ☐ @low implement SOLID
 
 Archive:
+  ✔ @high drivers module - create controller @done(24-05-02 18:47)
+  ✔ @high drivers module - find by id service @done(24-05-01 23:31)
+  ✔ @high drivers module - find all controller @done(24-04-26 00:09)
+  ✔ @high drivers module - find drivers by year @done(24-05-01 23:30)
+  ✔ @high drivers module - delete controller @done(24-04-29 01:22)
+  ✔ @high drivers module - create service @done(24-04-29 01:23)
+  ✔ @high drivers module - find all service @done(24-04-26 00:09)
+  ✔ @high drivers module - delete service @done(24-04-29 01:21)
   ✔ @critical race model - change datetimes data type to string @done(24-03-19 16:32)
   ✔ @high races module - update controller @done(24-03-15 16:58)
-  ✘ @high races module - find by year controller @cancelled(24-03-19 16:37)
+  ✔ @high races model - add a field to order the races on cronological order @done(24-03-20 01:11)
+  ✔ @high races module - find race by id controller @done(24-03-21 21:01)
