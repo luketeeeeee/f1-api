@@ -7,7 +7,7 @@ services:
     image: postgres
     environment:
       POSTGRES_DB: f1-api-db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
     ports:
       - '5432:5432'
