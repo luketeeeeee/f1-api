@@ -1,15 +1,17 @@
-import logger from 'pino';
-import dayjs from 'dayjs';
+import pino from 'pino';
+import pretty from 'pino-pretty';
 
-const level = 'info';
-
-const log = logger({
-  transport: {
-    target: 'pino-pretty',
-  },
-  level,
-  base: { pid: false },
-  timestamp: () => `,"time": "${dayjs().format()}"`,
+const stream = pretty({
+  levelFirst: true,
+  colorize: true,
+  ignore: 'time,hostname,pid',
 });
 
-export default log;
+const logger = pino(
+  {
+    name: 'f1-api',
+  },
+  stream
+);
+
+export default logger;
