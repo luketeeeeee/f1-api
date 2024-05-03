@@ -34,14 +34,16 @@ __export(logger_exports, {
 });
 module.exports = __toCommonJS(logger_exports);
 var import_pino = __toESM(require("pino"));
-var import_dayjs = __toESM(require("dayjs"));
-var level = "info";
-var log = (0, import_pino.default)({
-  transport: {
-    target: "pino-pretty"
-  },
-  level,
-  base: { pid: false },
-  timestamp: () => `,"time": "${(0, import_dayjs.default)().format()}"`
+var import_pino_pretty = __toESM(require("pino-pretty"));
+var stream = (0, import_pino_pretty.default)({
+  levelFirst: true,
+  colorize: true,
+  ignore: "time,hostname,pid"
 });
-var logger_default = log;
+var logger = (0, import_pino.default)(
+  {
+    name: "f1-api"
+  },
+  stream
+);
+var logger_default = logger;

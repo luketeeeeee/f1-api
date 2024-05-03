@@ -72,20 +72,6 @@ var __async = (__this, __arguments, generator) => {
 var import_express4 = __toESM(require("express"));
 var import_cors = __toESM(require("cors"));
 
-// src/utils/logger.ts
-var import_pino = __toESM(require("pino"));
-var import_dayjs = __toESM(require("dayjs"));
-var level = "info";
-var log = (0, import_pino.default)({
-  transport: {
-    target: "pino-pretty"
-  },
-  level,
-  base: { pid: false },
-  timestamp: () => `,"time": "${(0, import_dayjs.default)().format()}"`
-});
-var logger_default = log;
-
 // src/modules/seasons/seasons.routes.ts
 var import_express = __toESM(require("express"));
 
@@ -614,6 +600,22 @@ router3.route("/:id").get(DriverController.findById);
 router3.route("/").post(DriverController.create);
 router3.route("/:id").delete(DriverController.remove);
 var drivers_routes_default = router3;
+
+// src/utils/logger.ts
+var import_pino = __toESM(require("pino"));
+var import_pino_pretty = __toESM(require("pino-pretty"));
+var stream = (0, import_pino_pretty.default)({
+  levelFirst: true,
+  colorize: true,
+  ignore: "time,hostname,pid"
+});
+var logger = (0, import_pino.default)(
+  {
+    name: "f1-api"
+  },
+  stream
+);
+var logger_default = logger;
 
 // src/index.ts
 var port = 8080;
