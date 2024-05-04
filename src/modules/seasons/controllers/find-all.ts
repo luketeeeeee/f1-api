@@ -6,7 +6,7 @@ export const findAll = async (req: Request, res: Response) => {
     const allSeasons = await findAllSeasons();
 
     return res.status(200).json({
-      message: 'all seasons finded',
+      message: 'all seasons found',
       data: allSeasons.sort((season1, season2) => {
         return Number(season1.year) - Number(season2.year);
       }),

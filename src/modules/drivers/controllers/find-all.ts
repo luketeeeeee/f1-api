@@ -6,7 +6,7 @@ export const findAll = async (req: Request, res: Response) => {
     const allDrivers = await findAllDrivers();
 
     return res.status(200).json({
-      message: 'all drivers finded',
+      message: 'all drivers found',
       data: allDrivers,
     });
   } catch (error) {

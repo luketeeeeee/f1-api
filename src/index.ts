@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 // import log from './utils/logger';
 
@@ -18,6 +18,12 @@ app.use(express.json({ limit: '10mb' }));
 app.use('/seasons', seasonRoutes);
 app.use('/races', raceRoutes);
 app.use('/drivers', driverRoutes);
+
+app.use('/health', (_, res: Response) => {
+  return res.status(200).json({
+    message: "it's hammer time",
+  });
+});
 
 app.listen(port, () => {
   logger.info(`servidor iniciado em ${url}`);

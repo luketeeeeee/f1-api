@@ -26,7 +26,7 @@ export const findByYear = async (req: Request, res: Response) => {
         }),
         drivers: seasonDrivers,
       },
-      message: `${param_year} season finded`,
+      message: `${param_year} season found`,
     });
   } catch (error) {
     console.log(error);
