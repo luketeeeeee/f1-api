@@ -139,7 +139,7 @@ var findAll = (req, res) => __async(void 0, null, function* () {
   try {
     const allSeasons = yield findAllSeasons();
     return res.status(200).json({
-      message: "all seasons finded",
+      message: "all seasons found",
       data: allSeasons.sort((season1, season2) => {
         return Number(season1.year) - Number(season2.year);
       })
@@ -221,7 +221,7 @@ var findByYear = (req, res) => __async(void 0, null, function* () {
         }),
         drivers: seasonDrivers
       },
-      message: `${param_year} season finded`
+      message: `${param_year} season found`
     });
   } catch (error) {
     console.log(error);
@@ -533,7 +533,7 @@ var findAll2 = (req, res) => __async(void 0, null, function* () {
   try {
     const allDrivers = yield findAllDrivers();
     return res.status(200).json({
-      message: "all drivers finded",
+      message: "all drivers found",
       data: allDrivers
     });
   } catch (error) {
@@ -626,6 +626,16 @@ app.use(import_express4.default.json({ limit: "10mb" }));
 app.use("/seasons", seasons_routes_default);
 app.use("/races", races_routes_default);
 app.use("/drivers", drivers_routes_default);
+var healthCheckRouter = import_express4.default.Router();
+healthCheckRouter.route("/health").get((_, res) => __async(exports, null, function* () {
+  res.send("it's hammer time");
+}));
+healthCheckRouter.route("/").get((_, res) => __async(exports, null, function* () {
+  res.send({
+    routes: { seasons: "/seasons", drivers: "/drivers" }
+  });
+}));
+app.use("/", healthCheckRouter);
 app.listen(port, () => {
   logger_default.info(`servidor iniciado em ${url}`);
 });
