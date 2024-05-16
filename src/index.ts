@@ -19,17 +19,20 @@ app.use('/seasons', seasonRoutes);
 app.use('/races', raceRoutes);
 app.use('/drivers', driverRoutes);
 
-app.use('/health', (_, res: Response) => {
+const healthCheckRouter = express.Router();
+
+healthCheckRouter.route('/health').get(async (_, res: Response) => {
   return res.status(200).json({
     message: "it's hammer time",
   });
 });
-
-app.use('/', (_, res: Response) => {
+healthCheckRouter.route('/').get(async (_, res: Response) => {
   return res.status(200).json({
     routes: { seasons: '/seasons', drivers: '/drivers' },
   });
 });
+
+app.use('/', healthCheckRouter);
 
 app.listen(port, () => {
   logger.info(`servidor iniciado em ${url}`);
