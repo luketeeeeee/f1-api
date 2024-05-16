@@ -22,12 +22,10 @@ app.use('/drivers', driverRoutes);
 const healthCheckRouter = express.Router();
 
 healthCheckRouter.route('/health').get(async (_, res: Response) => {
-  return res.status(200).json({
-    message: "it's hammer time",
-  });
+  res.send("it's hammer time");
 });
 healthCheckRouter.route('/').get(async (_, res: Response) => {
-  return res.status(200).json({
+  res.send({
     routes: { seasons: '/seasons', drivers: '/drivers' },
   });
 });
