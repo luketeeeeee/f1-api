@@ -84,7 +84,7 @@ var findByYear = (req, res) => __async(void 0, null, function* () {
         }),
         drivers: seasonDrivers
       },
-      message: `${param_year} season finded`
+      message: `${param_year} season found`
     });
   } catch (error) {
     console.log(error);

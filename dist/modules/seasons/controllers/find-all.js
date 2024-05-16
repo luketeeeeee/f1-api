@@ -59,7 +59,7 @@ var findAll = (req, res) => __async(void 0, null, function* () {
   try {
     const allSeasons = yield findAllSeasons();
     return res.status(200).json({
-      message: "all seasons finded",
+      message: "all seasons found",
       data: allSeasons.sort((season1, season2) => {
         return Number(season1.year) - Number(season2.year);
       })

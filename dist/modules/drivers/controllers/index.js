@@ -190,7 +190,7 @@ var findAll = (req, res) => __async(void 0, null, function* () {
   try {
     const allDrivers = yield findAllDrivers();
     return res.status(200).json({
-      message: "all drivers finded",
+      message: "all drivers found",
       data: allDrivers
     });
   } catch (error) {
