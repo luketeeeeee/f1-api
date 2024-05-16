@@ -25,6 +25,12 @@ app.use('/health', (_, res: Response) => {
   });
 });
 
+app.use('/', (_, res: Response) => {
+  return res.status(200).json({
+    routes: { seasons: '/seasons', drivers: '/drivers' },
+  });
+});
+
 app.listen(port, () => {
   logger.info(`servidor iniciado em ${url}`);
 });

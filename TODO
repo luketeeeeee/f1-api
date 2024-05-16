@@ -1,8 +1,6 @@
 🔴 critical tasks (bugs):
 
 🟠 high priority tasks (new features):
-  ☐ @high drivers module - create many controller
-  ☐ @high drivers module - create many service
   ☐ @high drivers module - update service
   ☐ @high drivers module - routes
   ☐ @high races module - find by date service
