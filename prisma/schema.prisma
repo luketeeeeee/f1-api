@@ -29,8 +29,8 @@ model Team {
   drivers_titles     Int?
   drivers            Driver[]
   cars               Car[]
-  Season             Season?  @relation(fields: [seasonYear], references: [year])
-  seasonYear         String?
+  Season             Season?  @relation(fields: [season_year], references: [year])
+  season_year        String?
 
   @@map("teams")
 }
@@ -49,29 +49,29 @@ model Driver {
   is_alive           Boolean
   photo              String?
   competed_seasons   String[]
-  Season             Season?  @relation(fields: [seasonYear], references: [year])
-  seasonYear         String?
-  Team               Team?    @relation(fields: [teamId], references: [id])
-  teamId             String?
-  Car                Car?     @relation(fields: [carId], references: [id])
-  carId              String?
+  Season             Season?  @relation(fields: [season_year], references: [year])
+  season_year        String?
+  Team               Team?    @relation(fields: [team_id], references: [id])
+  team_id            String?
+  Car                Car?     @relation(fields: [car_id], references: [id])
+  car_id             String?
 
   @@map("drivers")
 }
 
 model Car {
-  id         String   @id @default(uuid())
-  team       String
-  name       String   @unique
-  photo      String?
-  wins       Int?
-  podiums    Int?
-  dnfs       Int?
-  drivers    Driver[]
-  Season     Season?  @relation(fields: [seasonYear], references: [year])
-  seasonYear String?
-  Team       Team?    @relation(fields: [teamId], references: [id])
-  teamId     String?
+  id          String   @id @default(uuid())
+  team        String
+  name        String   @unique
+  photo       String?
+  wins        Int?
+  podiums     Int?
+  dnfs        Int?
+  drivers     Driver[]
+  Season      Season?  @relation(fields: [season_year], references: [year])
+  season_year String?
+  Team        Team?    @relation(fields: [team_id], references: [id])
+  team_id     String?
 
   @@map("cars")
 }
@@ -90,8 +90,8 @@ model Race {
   // fastest_lap  String?
   circuit               String
   race_number           Int
-  Season                Season? @relation(fields: [seasonYear], references: [year])
-  seasonYear            String?
+  Season                Season? @relation(fields: [season_year], references: [year])
+  season_year           String?
 
   @@map("races")
 }

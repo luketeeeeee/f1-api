@@ -14,17 +14,6 @@
   ☐ @low races model - add a field for cancelled (boolean)
   ☐ @low create circuit model
   ☐ @low implement SOLID
+  ☐ @low error messages update to hub-api model
 
 Archive:
-  ✔ @high drivers module - create controller @done(24-05-02 18:47)
-  ✔ @high drivers module - find by id service @done(24-05-01 23:31)
-  ✔ @high drivers module - find all controller @done(24-04-26 00:09)
-  ✔ @high drivers module - find drivers by year @done(24-05-01 23:30)
-  ✔ @high drivers module - delete controller @done(24-04-29 01:22)
-  ✔ @high drivers module - create service @done(24-04-29 01:23)
-  ✔ @high drivers module - find all service @done(24-04-26 00:09)
-  ✔ @high drivers module - delete service @done(24-04-29 01:21)
-  ✔ @critical race model - change datetimes data type to string @done(24-03-19 16:32)
-  ✔ @high races module - update controller @done(24-03-15 16:58)
-  ✔ @high races model - add a field to order the races on cronological order @done(24-03-20 01:11)
-  ✔ @high races module - find race by id controller @done(24-03-21 21:01)

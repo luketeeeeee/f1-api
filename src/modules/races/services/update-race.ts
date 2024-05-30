@@ -1,4 +1,4 @@
-import prisma from '../../prisma';
+import prisma from '../../../prisma';
 import { Prisma } from '@prisma/client';
 
 export const updateRace = (id: string, data: Prisma.RaceUpdateInput) => {
