@@ -29,7 +29,6 @@ export const findByYear = async (req: Request, res: Response) => {
       message: `${param_year} season found`,
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
       message: 'internal server error',
     });

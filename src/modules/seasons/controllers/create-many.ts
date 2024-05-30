@@ -11,7 +11,6 @@ export const createMany = async (req: Request, res: Response) => {
       data: newSeasons,
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
       message: 'internal server error',
     });

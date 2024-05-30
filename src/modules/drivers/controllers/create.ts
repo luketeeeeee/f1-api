@@ -29,7 +29,6 @@ export const create = async (req: Request, res: Response) => {
     });
 
     competed_seasons.forEach(async (season) => {
-      console.log('teste');
       await updateSeason(season, {}, relatedObjects.driver, newDriver.id);
     });
 
@@ -38,7 +37,6 @@ export const create = async (req: Request, res: Response) => {
       data: newDriver,
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
       message: 'internal server error',
     });
