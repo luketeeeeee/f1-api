@@ -4,9 +4,8 @@ services:
   f1-api-db:
     image: postgres
     ports:
-      - '5432:5432'
+      - '5433:5433'
     environment:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
-    restart: always
