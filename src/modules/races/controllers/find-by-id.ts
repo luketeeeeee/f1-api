@@ -19,7 +19,7 @@ export const findById = async (req: Request, res: Response) => {
     });
   } catch (error) {
     return res.status(500).json({
-      message: 'internal server error',
+      message: { error: (error as Error).message },
     });
   }
 };
