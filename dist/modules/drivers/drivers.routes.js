@@ -81,7 +81,7 @@ __export(drivers_routes_exports, {
 module.exports = __toCommonJS(drivers_routes_exports);
 var import_express = __toESM(require("express"));
 
-// src/modules/prisma.ts
+// src/prisma.ts
 var import_client = require("@prisma/client");
 var prisma = new import_client.PrismaClient();
 var prisma_default = prisma;
@@ -181,7 +181,6 @@ var create = (req, res) => __async(void 0, null, function* () {
       is_alive
     }, body));
     competed_seasons.forEach((season) => __async(void 0, null, function* () {
-      console.log("teste");
       yield updateSeason(season, {}, relatedObjects.driver, newDriver.id);
     }));
     return res.status(200).json({
@@ -189,9 +188,8 @@ var create = (req, res) => __async(void 0, null, function* () {
       data: newDriver
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -206,7 +204,7 @@ var findAll = (req, res) => __async(void 0, null, function* () {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -227,7 +225,7 @@ var findById = (req, res) => {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 };
@@ -248,7 +246,7 @@ var remove = (req, res) => __async(void 0, null, function* () {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });

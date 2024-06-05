@@ -70,7 +70,7 @@ __export(create_exports, {
 });
 module.exports = __toCommonJS(create_exports);
 
-// src/modules/prisma.ts
+// src/prisma.ts
 var import_client = require("@prisma/client");
 var prisma = new import_client.PrismaClient();
 var prisma_default = prisma;
@@ -155,7 +155,6 @@ var create = (req, res) => __async(void 0, null, function* () {
       is_alive
     }, body));
     competed_seasons.forEach((season) => __async(void 0, null, function* () {
-      console.log("teste");
       yield updateSeason(season, {}, relatedObjects.driver, newDriver.id);
     }));
     return res.status(200).json({
@@ -163,9 +162,8 @@ var create = (req, res) => __async(void 0, null, function* () {
       data: newDriver
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });

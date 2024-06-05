@@ -44,7 +44,7 @@ __export(controllers_exports, {
 });
 module.exports = __toCommonJS(controllers_exports);
 
-// src/modules/prisma.ts
+// src/prisma.ts
 var import_client = require("@prisma/client");
 var prisma = new import_client.PrismaClient();
 var prisma_default = prisma;
@@ -115,7 +115,7 @@ var findAll = (req, res) => __async(void 0, null, function* () {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -153,9 +153,8 @@ var findByYear = (req, res) => __async(void 0, null, function* () {
       message: `${param_year} season found`
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -199,7 +198,7 @@ var create = (req, res) => __async(void 0, null, function* () {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -214,9 +213,8 @@ var createMany = (req, res) => __async(void 0, null, function* () {
       data: newSeasons
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -264,7 +262,7 @@ var remove = (req, res) => __async(void 0, null, function* () {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });

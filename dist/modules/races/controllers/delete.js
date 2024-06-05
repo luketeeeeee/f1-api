@@ -44,7 +44,7 @@ __export(delete_exports, {
 });
 module.exports = __toCommonJS(delete_exports);
 
-// src/modules/prisma.ts
+// src/prisma.ts
 var import_client = require("@prisma/client");
 var prisma = new import_client.PrismaClient();
 var prisma_default = prisma;
@@ -74,9 +74,8 @@ var remove = (req, res) => __async(void 0, null, function* () {
       message: "successfully deleted race"
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });

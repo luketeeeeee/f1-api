@@ -75,7 +75,7 @@ var import_cors = __toESM(require("cors"));
 // src/modules/seasons/seasons.routes.ts
 var import_express = __toESM(require("express"));
 
-// src/modules/prisma.ts
+// src/prisma.ts
 var import_client = require("@prisma/client");
 var prisma = new import_client.PrismaClient();
 var prisma_default = prisma;
@@ -146,7 +146,7 @@ var findAll = (req, res) => __async(void 0, null, function* () {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -224,9 +224,8 @@ var findByYear = (req, res) => __async(void 0, null, function* () {
       message: `${param_year} season found`
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -270,7 +269,7 @@ var create = (req, res) => __async(void 0, null, function* () {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -285,9 +284,8 @@ var createMany = (req, res) => __async(void 0, null, function* () {
       data: newSeasons
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -335,7 +333,7 @@ var remove = (req, res) => __async(void 0, null, function* () {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -378,7 +376,7 @@ var findById = (req, res) => __async(void 0, null, function* () {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -402,9 +400,8 @@ var create2 = (req, res) => __async(void 0, null, function* () {
       data: newRace
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -447,7 +444,7 @@ var update2 = (req, res) => __async(void 0, null, function* () {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -467,9 +464,8 @@ var remove2 = (req, res) => __async(void 0, null, function* () {
       message: "successfully deleted race"
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -513,7 +509,6 @@ var create3 = (req, res) => __async(void 0, null, function* () {
       is_alive
     }, body));
     competed_seasons.forEach((season) => __async(void 0, null, function* () {
-      console.log("teste");
       yield updateSeason(season, {}, relatedObjects.driver, newDriver.id);
     }));
     return res.status(200).json({
@@ -521,9 +516,8 @@ var create3 = (req, res) => __async(void 0, null, function* () {
       data: newDriver
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -538,7 +532,7 @@ var findAll2 = (req, res) => __async(void 0, null, function* () {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });
@@ -559,7 +553,7 @@ var findById2 = (req, res) => {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 };
@@ -580,7 +574,7 @@ var remove3 = (req, res) => __async(void 0, null, function* () {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "internal server error"
+      message: { error: error.message }
     });
   }
 });

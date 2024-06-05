@@ -24,7 +24,7 @@ __export(find_all_drivers_exports, {
 });
 module.exports = __toCommonJS(find_all_drivers_exports);
 
-// src/modules/prisma.ts
+// src/prisma.ts
 var import_client = require("@prisma/client");
 var prisma = new import_client.PrismaClient();
 var prisma_default = prisma;
